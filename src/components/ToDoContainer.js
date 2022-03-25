@@ -19,16 +19,16 @@ function ToDoContainer({ search }) {
     }
 
     const filteredToDos = toDos.filter((toDos) => {
-      return toDos.description.toLowerCase().includes(search.toLowerCase());
+      return toDos.title
     });
 
     const sortedToDos = filteredToDos.sort((a, b) => {
-        const nameA = a.name.toUpperCase(); 
-        const nameB = b.name.toUpperCase(); 
-        if (nameA < nameB) {
+        const toDoA = a.name; 
+        const toDoB = b.name; 
+        if (toDoA < toDoB) {
             return -1;
         }
-        if (nameA > nameB) {
+        if (toDoA > toDoB) {
             return 1;
         }
         return 0;
@@ -45,6 +45,7 @@ function ToDoContainer({ search }) {
           key={todo.id}
           todo={todo}
           deleteToDo={deleteToDo}
+        //   onUpdateToDo={updatedToDos}
         />
     });
 
