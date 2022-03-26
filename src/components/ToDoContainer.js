@@ -5,9 +5,17 @@ import Search from "./Search";
 
 function ToDoContainer() {
     const [toDos, setToDos] = useState([])
-    const [sortByAscending, setSortAscending] = useState("title")
-    const [sortByDescending, setSortDescending] = useState("title");
-    
+  
+    useEffect(() => {
+      fetch("https://jsonplaceholder.typicode.com/todos")
+        .then((response) => response.json())
+        .then((toDos) => setToDos(toDos));
+    }, []);
+  
+    const filteredToDos = toDos.filter((toDos) => {
+    return toDos.title;
+    });
+  
     function deleteToDo(id) {
       const updatedToDos = toDos.filter(
         (todo) => todo.id !== id
@@ -20,45 +28,34 @@ function ToDoContainer() {
       setToDos(updatedToDos);
     }
 
-    const filteredToDos = toDos.filter((toDos) => {
-      return toDos.title
-    });
-    console.log(filteredToDos)
-
-    const sortedToDos = filteredToDos.sort((a, z) => {
-        const aToDo = a.title; 
-        const zToDo = z.title; 
-        if (aToDo < zToDo) {
-            return -1;
-        }
-        if (aToDo > zToDo) {
-            return 1;
-        }
-        return 0;
-    });
+ 
+ 
+  function sortAscending() {
+         const sortedToDos = filteredToDos.sort((a, z) => {
+           const aToDo = a.title;
+           const zToDo = z.title;
+           if (aToDo < zToDo) {
+             return -1;
+           }
+           if (aToDo > zToDo) {
+             return 1;
+           }
+           return 0;
+         });
+    setToDos(sortedToDos);
     console.log(sortedToDos)
-    const toggleSort = () => {
-
     }
 
-    const sortAscending = () => {
-        sortedToDos.sort((a, b) => a - b);   
-        setSortAscending((sortByAscending) => !sortByAscending);
+  function sortDescending() {
+      filteredToDos.sort()
+      const sortedToDos = filteredToDos.reverse();
+    setToDos(sortedToDos)
+    console.log(sortedToDos);
     }
-    console.log(sortAscending)
+
+
     
-    const sortDescending = () => {
-        filteredToDos.sort((a, b) => a - b).reverse();
-        setSortDescending((sortByDescending) => !sortByDescending)
-    }
-
-
-    useEffect(() => {
-      fetch("https://jsonplaceholder.typicode.com/todos")
-        .then((response) => response.json())
-        .then((toDos) => setToDos(toDos));
-    }, []);
-
+    
     const listedToDos = toDos.map((todo) => {
       return <ToDos
           key={todo.id}
