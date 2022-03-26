@@ -27,9 +27,17 @@ function ToDoContainer() {
       const updatedToDos = [newToDo, ...toDos];
       setToDos(updatedToDos);
     }
+  
+  function completedToDo(id) {
+    const updatedToDos = toDos.map(toDo => {
+      if (toDo.id === id) {
+          toDo.isCompleted = !toDo.isCompleted
+      }
+      return toDo
+    })
+    setToDos(updatedToDos)
+    }
 
- 
- 
   function sortAscending() {
          const sortedToDos = filteredToDos.sort((a, z) => {
            const aToDo = a.title;
@@ -52,16 +60,13 @@ function ToDoContainer() {
     setToDos(sortedToDos)
     console.log(sortedToDos);
     }
-
-
-    
     
     const listedToDos = toDos.map((todo) => {
       return <ToDos
           key={todo.id}
           todo={todo}
-          deleteToDo={deleteToDo}
-        //   onUpdateToDo={updatedToDos}
+          onDeleteToDo={deleteToDo}
+          onUpdateToDo={completedToDo}
         />
     });
 
@@ -71,6 +76,7 @@ function ToDoContainer() {
         <Search />
         <button onClick={sortAscending}>asc</button>
         <button onClick={sortDescending}>desc</button>
+        <h1>What tasks need to be accomplished?</h1>
         <ul className="list">{listedToDos}</ul>
       </main>
     );

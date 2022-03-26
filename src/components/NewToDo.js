@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function NewToDo({ addToDo }) {
     const [title, setTitle] = useState("");
@@ -27,6 +27,8 @@ function NewToDo({ addToDo }) {
       <form onSubmit={submitToDo}>
         <label htmlFor="title">Description: </label>
         <input
+          placeholder="Add a To-Do"
+          className="toDo-input"
           type="text"
           id="title"
           value={title}

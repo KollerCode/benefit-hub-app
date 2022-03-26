@@ -14,12 +14,58 @@ code {
 }
 
 div.header{
-  color: #1D3557;
-  background-color: #A8DADC;
+  color: white;
+  background-color: #457B9D
 }
 
 h1#header-title{
   padding: 50px;
   margin: auto;
   text-align: center;
+}
+
+main{
+  background-color: #A8DADC;
+  color: #1D3557
+}
+.complete{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+.toDo-input::placeholder {
+  color: #E63946
+}
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
 }

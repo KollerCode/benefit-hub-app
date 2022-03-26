@@ -8,7 +8,9 @@ function App() {
       <header>
         <Header/>
       </header>
-      <ToDoContainer/>
+      <div className="todo-app">
+        <ToDoContainer />
+        </div>
     </div>
   );
 }
