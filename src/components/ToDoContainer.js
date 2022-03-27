@@ -120,6 +120,7 @@ function ToDoContainer({ input } ) {
           width="30"
           height="30"
           fill="currentColor"
+          style={{ cursor: "pointer" }}
           onClick={sortAscending}
           class="sort-ascend"
           viewBox="0 0 16 16"
@@ -135,6 +136,7 @@ function ToDoContainer({ input } ) {
           width="30"
           height="30"
           fill="currentColor"
+          style={{ cursor: "pointer" }}
           class="sort-descend"
           viewBox="0 0 16 16"
           onClick={sortDescending}
@@ -146,12 +148,17 @@ function ToDoContainer({ input } ) {
           />
           <path d="M4.5 13.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z" />
         </svg>
-        <ul className="list">{listedToDos}</ul>
-        {/* <ul className="list">
+        {/* <ul className="list">{listedToDos}</ul> */}
+        <ul className="list">
           {filteredData.map((todo) => (
-            <ul key={todo.id}>{todo.title}</ul>
+            <ToDos
+              key={todo.id}
+              todo={todo}
+              deleteToDo={deleteToDo}
+              completedToDo={completedToDo}
+            />
           ))}
-        </ul> */}
+        </ul>
       </main>
     );
 }

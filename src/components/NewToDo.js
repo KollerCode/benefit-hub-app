@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form, FormControl, Button, FormGroup } from "react-bootstrap";
 
 function NewToDo({ addToDo }) {
   const [title, setTitle] = useState('');
@@ -25,17 +26,21 @@ function NewToDo({ addToDo }) {
   }
   
     return (
-      <form onSubmit={submitToDo}>
-        <input
-          placeholder="Add a To-Do"
-          className="toDo-input"
-          type="text"
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <button type="submit">Add To-Do</button>
-      </form>
+      <Form onSubmit={submitToDo}>
+        <FormGroup class="mb-3">
+          <FormControl
+            placeholder="Add a To-Do"
+            className="form-control"
+            type="text"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            />
+          <Button type="submit" class="btn btn-primary mb-3">
+            Add To-Do
+            </Button>
+        </FormGroup>
+      </Form>
     );
   }
 

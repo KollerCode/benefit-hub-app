@@ -56,14 +56,11 @@ div.complete{
 .todo-app {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  width: 740px;
-  min-height: 600px;
+  width: 800px;
   text-align: center;
-  margin: 85px auto;
-  border-radius: 10px;
-  padding-bottom: 32px;
+  margin: 35px auto;
 }
+
 .toDo-input::placeholder {
   color: #E63946
 }
@@ -86,12 +83,11 @@ div.toDo-row {
   );
 
   padding: 16px;
+  margin-bottom: 11px;
+  margin-top: 11px;
   border-radius: 20px;
   width: 90%;
-}
-
-div.rows{
-
+  font-size: 17px;
 }
 
 strong#title:hover {
@@ -122,11 +118,11 @@ svg.sort-descend{
 color: #fff;
 }
 svg.sort-ascend:hover{
-color: #457B9D
+color: #0077B6
 }
 
 svg.sort-descend:hover{
-color: greenyellow;
+color: #0077B6
 }
 div.popup{
   position: fixed;
