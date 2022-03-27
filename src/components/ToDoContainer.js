@@ -84,16 +84,16 @@ function ToDoContainer({ input } ) {
     console.log(sortReverse);
   }
   
-  const listedToDos = toDos.map((todo) => {
-    return (
-      <ToDos
-        key={todo.id}
-        todo={todo}
-        deleteToDo={deleteToDo}
-        completedToDo={completedToDo}
-      />
-    )
-  })
+  // const listedToDos = toDos.map((todo) => {
+  //   return (
+  //     <ToDos
+  //       key={todo.id}
+  //       todo={todo}
+  //       deleteToDo={deleteToDo}
+  //       completedToDo={completedToDo}
+  //     />
+  //   )
+  // })
 
   const filteredData = toDos.filter((todo) => {
    if (input === "") {

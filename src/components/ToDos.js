@@ -33,11 +33,11 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
     });
     deleteToDo(id);
   }
-  function renderTooltip(props) {
-    <Tooltip {...props} id="tooltip-top">
-      Done
-    </Tooltip>
-  }
+  // function renderTooltip(props) {
+  //   <Tooltip {...props} id="tooltip-top">
+  //     Done
+  //   </Tooltip>
+  // }
 
 
   return (
