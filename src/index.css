@@ -79,7 +79,35 @@ strong#title:hover {
   background-color: rgba(250, 32, 25, 0.75);
   transition: all .3s ease-in-out;
 }
+svg.check-icon{
+  color: greenyellow;
+}
+div.icons {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+}
 
+svg.delete-icon {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #E63946;
+}
+
+svg.sort-ascend{
+color: #fff;
+}
+
+svg.sort-descend{
+color: #fff;
+}
+svg.sort-ascend:hover{
+color: #457B9D
+}
+
+svg.sort-descend:hover{
+color: greenyellow;
+}
 div.popup{
   position: fixed;
   top: 0;
@@ -105,4 +133,12 @@ div.popup-inner#close-btn{
   position: absolute;
   top: 16px;
   right: 16px;
+}
+
+.button-tooltip{
+  position: 'absolute';
+  backgroundColor: 'rgba(255, 100, 100, 0.85)';
+  padding: '2px 10px';
+  color: 'white';
+  borderRadius: 3;
 }
