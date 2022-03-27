@@ -44,7 +44,7 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
     <div
       className="rows"
       style={{ cursor: "pointer" }}
-      onClick={() => setPopupButton(true)}
+      // onClick={() => setPopupButton(true)}
     >
       <div
         className={todo.completed ? "toDo-row complete" : "toDo-row"}
@@ -93,13 +93,13 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
             </svg>
           </OverlayTrigger>
         </div>
-        </div>
-        <Popup trigger={popupButton} closeButtonTrigger={setPopupButton}>
+      </div>
+      {/* <Popup trigger={popupButton} closeButtonTrigger={setPopupButton}>
           <h2>Details:</h2>
           <h3>ID: {todo.id}</h3>
           <h3>userID: {todo.userId}</h3>
           <h3>Title: {todo.title}</h3>
-        </Popup>
+        </Popup> */}
     </div>
   );
 }
