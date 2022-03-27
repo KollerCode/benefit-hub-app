@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import Popup from "./Popup";
 
 function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
     const { userId, id, title, completed } = todo;
-    // const [isComplete, setIsComplete] = useState(true);
+    const [popupButton, setPopupButton] = useState(false);
 //   const navigate = useNavigate();
 
   const handleComplete= () => {
@@ -31,20 +32,28 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
   }
 
  return (
-   <div>
+   <div
+     className="rows"
+     style={{ cursor: "pointer" }}
+     onClick={() => setPopupButton(true)}
+   >
      <div
        className={todo.completed ? "toDo-row complete" : "toDo-row"}
        key={id}
-       //  onClick={() => handleComplete(todo.id)}
      >
-       <strong key={todo.id} onClick={handleComplete}>
+       <strong id="title" key={todo.id} onClick={handleComplete}>
          {todo.title}
        </strong>
-       <div></div>
        <button classname="delete-task" onClick={handleDelete}>
          Bye Task!
        </button>
      </div>
+     <Popup trigger={popupButton} closeButtonTrigger={setPopupButton}>
+       <h2>Details:</h2>
+       <h3>ID: {todo.id}</h3>
+       <h3>userID: {todo.userId}</h3>
+       <h3>Title: {todo.title}</h3>
+     </Popup>
    </div>
  );
 }

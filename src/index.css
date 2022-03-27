@@ -70,6 +70,39 @@ div.toDo-row {
   width: 90%;
 }
 
-strong#todo-title{
-  
+div.rows{
+
+}
+
+strong#title:hover {
+  color: #fff;
+  background-color: rgba(250, 32, 25, 0.75);
+  transition: all .3s ease-in-out;
+}
+
+div.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  color:#1D3557;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.popup-inner{
+  position: relative;
+  padding: 30px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #A8DADC;
+}
+
+div.popup-inner#close-btn{
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
