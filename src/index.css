@@ -11,6 +11,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+        font-family: 'Amita', cursive;
+    font-family: 'Gayathri', sans-serif;
+    font-family: 'Merienda One', cursive;
 }
 
 div.header{
@@ -22,13 +25,30 @@ h1#header-title{
   padding: 50px;
   margin: auto;
   text-align: center;
+  font-family: 'Merienda One', cursive;
+  font-size: 100px;
+}
+
+h1.container-title {
+  font-family: 'Amita', cursive;
 }
 
 main{
   background-color: #A8DADC;
   color: #1D3557;
   padding: 30px;
+  font-family: 'Gayathri', sans-serif;
 }
+
+form.searchbar {
+padding: 10px;
+}
+
+input#search.form-control.form-control-lg{
+  padding: 10px;
+  border-width: 5px;
+}
+
 div.complete{
   text-decoration: line-through;
   opacity: 0.5;

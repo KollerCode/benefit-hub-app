@@ -5,7 +5,7 @@ import ToDos from "./ToDos";
 
 function ToDoContainer({ input } ) {
   const [toDos, setToDos] = useState([])
-  const [sortBy, setSortBy] = useState("id");
+  // const [sortBy, setSortBy] = useState("id");
   
     useEffect(() => {
       fetch("https://jsonplaceholder.typicode.com/todos")
@@ -17,13 +17,13 @@ function ToDoContainer({ input } ) {
     return toDos.title;
     });
   
-    const sortSearchFindings = filteredToDos.sort((a, b) => {
-    if (sortBy === "id") {
-      return a.id - b.id
-    } else {
-      return a.title.localeCompare(b.title)
-    }
-  })
+  //   const sortSearchFindings = filteredToDos.sort((a, b) => {
+  //   if (sortBy === "id") {
+  //     return a.id - b.id
+  //   } else {
+  //     return a.title.localeCompare(b.title)
+  //   }
+  // })
   
     function deleteToDo(id) {
       const deletedToDos = toDos.filter(
@@ -82,7 +82,7 @@ function ToDoContainer({ input } ) {
       const sortReverse = sortedToDos.reverse();
     setToDos(sortedToDos)
     console.log(sortReverse);
-    }
+  }
   
   const listedToDos = toDos.map((todo) => {
     return (
@@ -112,6 +112,7 @@ function ToDoContainer({ input } ) {
  });
     return (
       <main>
+        <h1 className="container-title">What tasks need to be accomplished?</h1>
         {/* <Search todo={filteredToDos}/> */}
         <NewToDo addToDo={addToDo} />
         <svg
@@ -145,7 +146,6 @@ function ToDoContainer({ input } ) {
           />
           <path d="M4.5 13.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z" />
         </svg>
-        <h1>What tasks need to be accomplished?</h1>
         <ul className="list">{listedToDos}</ul>
         {/* <ul className="list">
           {filteredData.map((todo) => (
