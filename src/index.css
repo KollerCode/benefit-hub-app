@@ -26,9 +26,10 @@ h1#header-title{
 
 main{
   background-color: #A8DADC;
-  color: #1D3557
+  color: #1D3557;
+  padding: 30px;
 }
-.complete{
+div.complete{
   text-decoration: line-through;
   opacity: 0.5;
 }
@@ -36,24 +37,23 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 520px;
+  width: 740px;
   min-height: 600px;
-  background: #161a2b;
   text-align: center;
-  margin: 128px auto;
+  margin: 85px auto;
   border-radius: 10px;
   padding-bottom: 32px;
 }
 .toDo-input::placeholder {
   color: #E63946
 }
-.todo-container {
+div.toDo-container {
   display: flex;
   flex-direction: row;
   position: relative;
 }
 
-.todo-row {
+div.toDo-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,11 +61,15 @@ main{
   color: #fff;
   background: linear-gradient(
     90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    rgb(29, 53, 87) 0%,
+    rgba(69, 123, 157) 100%
   );
 
   padding: 16px;
-  border-radius: 5px;
+  border-radius: 20px;
   width: 90%;
+}
+
+strong#todo-title{
+  
 }

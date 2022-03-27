@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-function ToDos({ todo, onUpdateToDo, onDeleteToDo }) {
+function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
     const { userId, id, title, completed } = todo;
-    const [isComplete, setIsComplete] = useState(true);
+    // const [isComplete, setIsComplete] = useState(true);
 //   const navigate = useNavigate();
 
-  const completedToDo = () => {
-    fetch(`https://jsonplaceholder.typicode.com/todos${id}`, {
+  const handleComplete= () => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -18,34 +18,35 @@ function ToDos({ todo, onUpdateToDo, onDeleteToDo }) {
       .then((r) => r.json())
       .then((toDos) => {
 
-        onUpdateToDo(toDos.id);
+      completedToDo(toDos.id);
       });
   };
+  console.log(handleComplete)
 
   function handleDelete() {
    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
      method: "DELETE",
    });
-    onDeleteToDo(id);
+    deleteToDo(id);
   }
 
-  return (
-    <div>
-      <strong>{title}</strong>
-      <div
-        className={todo.isComplete ?
-        'toDo-row complete' : 'toDo-row'}
-        key={id}
-      ></div>
-        <div
-          key={todo.id} 
-          onClick={() => completedToDo(todo.id)}>
-        </div>
-      <button classname="delete-task" onClick={handleDelete}>
-        Bye Task!
-      </button>
-    </div>
-  );
+ return (
+   <div>
+     <div
+       className={todo.completed ? "toDo-row complete" : "toDo-row"}
+       key={id}
+       //  onClick={() => handleComplete(todo.id)}
+     >
+       <strong key={todo.id} onClick={handleComplete}>
+         {todo.title}
+       </strong>
+       <div></div>
+       <button classname="delete-task" onClick={handleDelete}>
+         Bye Task!
+       </button>
+     </div>
+   </div>
+ );
 }
 
 export default ToDos;
