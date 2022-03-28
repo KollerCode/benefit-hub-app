@@ -1,71 +1,44 @@
-# Getting Started with Create React App
-
+# To-Do List App
+> A simple but aesthic to-do list app. 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 📖 OVERVIEW
 
-In the project directory, you can run:
+This is a simple to-do list app created with react-bootstrap and an online API: https://jsonplaceholder.typicode.com/
 
-### `npm start`
+## 🌟 FEATURES
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-Search Bar
+-Add new to-do form
+-Render to-dos
+-Sort ascending and descending
+-Click on the to-do for more details
+-Tooltips and popups
+-Mark as Complete with an icon and the row will darken and the to-do will cross-out. 
+-Delete with an icon
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ❔ HOW TO USE
+-The search bar renders/populates the results as they are typed in the input.
 
-### `npm test`
+-Below it, in the main section of the to-do list, is where the to-do's are rendered and new ones can be added. The to-do's are rendered via various fetch requests from `https://jsonplaceholder.typicode.com/todos`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-A new to-do can be added to the current todo list (and fake POSTed to the api) by writing in the form and clicking the "add" button". that new todo will be added to the bottom of the list.
 
-### `npm run build`
+-To mark and PATCH it as completed, you must click on the checkmark icon. The entire row will darken and the to-do will have a strike through to indicate it is completed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-To DELETE a to-do, simply click the red trash can icon. A tooltip will pop-up to indicate you are clicking in the right place for both of these icons (delete and complete).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-To sort the to-do's alphabetically, you can click one of the icons just below the search bar. The one with the A-Z pointing down will render them in alphabetical order. The other will do the reverse (Z-A). 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-Finally, to see details about the to-do click on the text in the row. A pop-up will appear with the information from the API about the to-do you have chosen. To return back to the todo list or homepage, click the close button.
 
-### `npm run eject`
+## 👩🏽‍💻 TECH STACK
+- JSX
+-React-Bootstrap
+-React
+-CSS
+-HTML
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+###
+Thank you for your consideration! I hope you enjoy my app 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# benefit-hub-app

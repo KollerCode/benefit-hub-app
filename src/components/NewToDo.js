@@ -32,7 +32,7 @@ function NewToDo({ addToDo }) {
       >
         <div class="col-12">
           <FormControl
-            placeholder="Add a To-Do"
+            placeholder="Write your to-do here"
             className="form-control"
             type="text"
             id="title"
