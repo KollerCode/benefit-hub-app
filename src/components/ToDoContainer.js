@@ -3,7 +3,7 @@ import NewToDo from "./NewToDo";
 import ToDos from "./ToDos";
 // import Search from "./Search";
 
-function ToDoContainer({ input } ) {
+function ToDoContainer({ input }) {
   const [toDos, setToDos] = useState([])
   // const [sortBy, setSortBy] = useState("id");
   

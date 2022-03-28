@@ -26,8 +26,11 @@ function NewToDo({ addToDo }) {
   }
   
     return (
-      <Form onSubmit={submitToDo}>
-        <FormGroup class="mb-3">
+      <Form
+        onSubmit={submitToDo}
+        className="row row-cols-lg-auto g-3 align-items-center"
+      >
+        <div class="col-12">
           <FormControl
             placeholder="Add a To-Do"
             className="form-control"
@@ -35,11 +38,13 @@ function NewToDo({ addToDo }) {
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            />
+          />
+        </div>
+        <div class="col-12">
           <Button type="submit" class="btn btn-primary mb-3">
             Add To-Do
-            </Button>
-        </FormGroup>
+          </Button>
+        </div>
       </Form>
     );
   }

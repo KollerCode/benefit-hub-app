@@ -1,13 +1,31 @@
 import React, { useState, useRef } from "react";
-import Popup from "./Popup";
+import { Link } from "react-router-dom";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+ import { useNavigate } from "react-router-dom";
 
 function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
   const { userId, id, title, completed } = todo;
   const [popupButton, setPopupButton] = useState(false);
+ 
 
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  function openItem() {
+    console.log(todo);
+    navigate('/details')
+    // navigate(`/todo/${todo.id}`, { replace: true, state: todo });
+  }
+
+  // let history = useNavigate();
+
+  // const openItem = e => {
+  //   history.push({
+  //     pathname: `http://localhost:3000/todo/${todo.id}`,
+  //     state: { todo: todo }
+  //   });
+  // }
+  
 
   const handleComplete = () => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
@@ -21,11 +39,10 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
     })
       .then((r) => r.json())
       .then((toDos) => {
-
         completedToDo(toDos.id);
       });
   };
-  console.log(handleComplete)
+  console.log(handleComplete);
 
   function handleDelete() {
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
@@ -39,18 +56,19 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
   //   </Tooltip>
   // }
 
-
   return (
-    <div
-      className="rows"
-      style={{ cursor: "pointer" }}
-      // onClick={() => setPopupButton(true)}
-    >
+    // <Link to={`/todo/${todo.id}`} state={{ data: todo }}>
+    <div className="rows">
       <div
         className={todo.completed ? "toDo-row complete" : "toDo-row"}
         key={id}
       >
-        <strong id="title" key={todo.id}>
+        <strong
+          id="title"
+          key={todo.id}
+          style={{ cursor: "pointer" }}
+          onClick={openItem}
+        >
           {todo.title}
         </strong>
         <div className="icons">
@@ -101,6 +119,7 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
           <h3>Title: {todo.title}</h3>
         </Popup> */}
     </div>
+    // </Link>
   );
 }
 
