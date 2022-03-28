@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
  import { useNavigate } from "react-router-dom";
+import Details from "./Details";
 
 function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
   const { userId, id, title, completed } = todo;
@@ -67,7 +68,7 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
           id="title"
           key={todo.id}
           style={{ cursor: "pointer" }}
-          onClick={openItem}
+          onClick={() => setPopupButton(true)}
         >
           {todo.title}
         </strong>
@@ -112,12 +113,12 @@ function ToDos({ toDos, todo, completedToDo, deleteToDo }) {
           </OverlayTrigger>
         </div>
       </div>
-      {/* <Popup trigger={popupButton} closeButtonTrigger={setPopupButton}>
-          <h2>Details:</h2>
-          <h3>ID: {todo.id}</h3>
-          <h3>userID: {todo.userId}</h3>
-          <h3>Title: {todo.title}</h3>
-        </Popup> */}
+      <Details trigger={popupButton} closeButtonTrigger={setPopupButton}>
+        <h2>Details:</h2>
+        <h3>ID: {todo.id}</h3>
+        <h3>userID: {todo.userId}</h3>
+        <h3>Title: {todo.title}</h3>
+      </Details>
     </div>
     // </Link>
   );
